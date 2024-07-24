@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class PairDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the first value:");
+        String firstValue = scanner.nextLine();
+
+        System.out.println("Enter the second value:");
+        String secondValue = scanner.nextLine();
+
+        Pair pair = new Pair(firstValue, secondValue);
+
+        System.out.println("First value: " + pair.getFirst());
+        System.out.println("Second value: " + pair.getSecond());
+
+        scanner.close();
+    }
+}
+
+class Pair {
+    private Object first;
+    private Object second;
+
+    public Pair(Object first, Object second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public Object getFirst() {
+        return first;
+    }
+
+    public Object getSecond() {
+        return second;
+    }
+}
