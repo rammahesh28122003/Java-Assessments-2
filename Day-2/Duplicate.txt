@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>();
+
+        System.out.println("Enter integers (type 'done' to finish):");
+        while (scanner.hasNextInt()) {
+            list.add(scanner.nextInt());
+        }
+
+        scanner.close();
+
+        Set<Integer> set = new HashSet<>(list);
+        list.clear();
+        list.addAll(set);
+
+        System.out.println("List without duplicates: " + list);
+    }
+}
