@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+class Animal {
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the type of animal (dog/cat): ");
+        String animalType = scanner.nextLine().toLowerCase();
+
+        Animal myAnimal;
+
+        switch (animalType) {
+            case "dog":
+                myAnimal = new Dog();
+                break;
+            case "cat":
+                myAnimal = new Cat();
+                break;
+            default:
+                myAnimal = new Animal();
+                break;
+        }
+
+        myAnimal.makeSound();
+        scanner.close();
+    }
+}
